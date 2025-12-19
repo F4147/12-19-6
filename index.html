@@ -93,18 +93,27 @@
             }
         }
 
-        .input-wrapper {
-            background: rgba(255, 255, 255, 0.01);
-            padding: 40px 50px;
-            border-radius: 20px;
-            border: none;
-            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(8px) brightness(1.2) contrast(1.1);
-            -webkit-backdrop-filter: blur(8px) brightness(1.2) contrast(1.1);
-            position: relative;
-            overflow: hidden;
-            max-width: 500px;
-        }
+       .input-wrapper {
+    /* 1. 背景色は完全に透明、または0.01（1%）に */
+    background: rgba(255, 255, 255, 0); 
+    
+    padding: 40px 50px;
+    border-radius: 20px;
+
+    /* 2. 境界線は「内側の極細の光」だけで表現 */
+    box-shadow: 
+        0 8px 32px 0 rgba(0, 0, 0, 0.15), /* 外側の影を少し柔らかく */
+        inset 0 0 0 1px rgba(255, 255, 255, 0.15); /* 1pxの光の筋。これが境界線になる */
+
+    /* 3. ぼかしを最小限にし、明るさで「枠内」を主張する */
+    /* ぼかし(blur)を小さくするほど透明感が増します */
+    backdrop-filter: blur(2px) brightness(1.15) contrast(1.1);
+    -webkit-backdrop-filter: blur(2px) brightness(1.15) contrast(1.1);
+
+    position: relative;
+    overflow: hidden;
+    max-width: 500px;
+}
 
         .input-wrapper::before {
             content: '';
