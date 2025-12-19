@@ -94,12 +94,13 @@
         }
 
         .input-wrapper {
-            background: transparent;
+            background: rgba(255, 255, 255, 0.05);
             padding: 40px 50px;
             border-radius: 20px;
-            border: 3px solid rgba(255, 255, 255, 0.8);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(10px);
+            border: none;
+            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2), inset 0 0 60px 0 rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(8px) brightness(1.1) contrast(1.05);
+            -webkit-backdrop-filter: blur(8px) brightness(1.1) contrast(1.05);
             position: relative;
             overflow: hidden;
             max-width: 500px;
@@ -226,8 +227,6 @@
 <body>
     <!-- ========================================
          ★★★ 背景画像を追加する場合 ★★★
-         下の行のコメントを外して、ファイル名を変更してください
-         例：<img src="入力ページ背景.jpg" alt="" class="background-image">
          ======================================== -->
     <img src="IMG_0439.JPG" alt="" class="background-image">
 
@@ -278,8 +277,8 @@
         const img = document.getElementById('bouncingImg');
         let x = Math.random() * (window.innerWidth - 100);
         let y = Math.random() * (window.innerHeight - 100);
-        let dx = 0.74; // 速度を落とす（元：3）
-        let dy = 0.74; // 速度を落とす（元：3）
+        let dx = 1.5; // 速度を落とす（元：3）
+        let dy = 1.5; // 速度を落とす（元：3）
 
         function animateBounce() {
             const imgWidth = img.offsetWidth;
